@@ -1,6 +1,8 @@
 symfony CommandImportCsv
 ============
 
+For this solution, I used the library portphp/portphp (https://github.com/portphp/portphp)
+
 For start you need:
 1. add in 'composer.json': 
    - "require" -> "skvoken/csvimport": "dev-master"
