@@ -1,0 +1,28 @@
+{
+    "name" : "skvoken/importcsv",
+    "description" : "Symfony2 Page bundle import csv file in database",
+    "version" : "1.0.0",
+    "type" : "symfony-bundle",
+    "homepage": "https://github.com/SkvokeN/ImportCsv",
+    "keywords" : ["page", "page bundle"],
+    "authors" : [{
+        "name" : "Dmitriy Astafev",
+        "email" : "skvooka@gmail.com"
+    }],
+    "require" : {
+        "php": ">=5.3.2",
+        "symfony/symfony": ">=2.8",
+        "portphp/csv": "dev-master",
+        "portphp/doctrine": "dev-master",
+        "portphp/portphp": "dev-master",
+        "portphp/steps": "dev-master"
+    },
+    "autoload" : {
+        "psr-4" : { "ImportCsvBundle\\": "src/ImportCsvBundle" }
+    },
+    "extra" : {
+        "branch-alias" : {
+            "dev-master" : "1.0.x-dev"
+        }
+    }
+}
