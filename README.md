@@ -2,12 +2,16 @@ symfony CommandImportCsv
 ============
 
 For start you need:
-1. add to app/config/config.yml in 'imports':
+1. add in 'composer.json': 
+   - "require" -> "skvoken/csvimport": "dev-master"
+   - <code>  "repositories" : [{ "type" : "vcs", "url" : "https://github.com/SkvokeN/csvImport.git" }], </code>
+2. add to app/config/config.yml in 'imports':
     - { resource: "@ImportCsvBundle/Resources/config/parameters.yml" }
     - { resource: "@ImportCsvBundle/Resources/config/services.yml" }
-2. add to AppKernel.php in function registerBundles():
+3. add to AppKernel.php in function registerBundles():
     - new ImportCsvBundle\ImportCsvBundle()
-3. add you csv file in app/Resources/csvImport
+4. add you csv file in app/Resources/csvImport
+
 
 Description
 ------------
