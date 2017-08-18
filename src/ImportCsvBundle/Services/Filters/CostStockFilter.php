@@ -1,6 +1,6 @@
 <?php
 
-namespace ImportCsvBundle\Filters;
+namespace ImportCsvBundle\Services\Filters;
 
 /**
  * class CostStockFilter

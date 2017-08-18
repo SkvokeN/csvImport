@@ -2,7 +2,7 @@
 
 namespace ImportCsvBundle\Command;
 
-use ImportCsvBundle\Filters\CostStockFilter;
+use ImportCsvBundle\Services\Filters\CostStockFilter;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

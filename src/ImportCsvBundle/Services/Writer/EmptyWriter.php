@@ -1,5 +1,5 @@
 <?php
-namespace ImportCsvBundle\Writer;
+namespace ImportCsvBundle\Services\Writer;
 
 use Port\Writer;
 

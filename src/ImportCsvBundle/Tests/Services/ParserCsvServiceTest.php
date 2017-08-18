@@ -4,7 +4,7 @@ namespace ImportCsvBundle\Tests\Services;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Doctrine\ORM\EntityManager;
 use ImportCsvBundle\Services\ParserCsvService;
-use ImportCsvBundle\Filters\CostStockFilter;
+use ImportCsvBundle\Services\Filters\CostStockFilter;
 
 class ParserCsvServiceTest extends KernelTestCase
 {

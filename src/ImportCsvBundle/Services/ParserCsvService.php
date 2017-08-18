@@ -2,7 +2,7 @@
 
 namespace ImportCsvBundle\Services;
 
-use ImportCsvBundle\Writer\EmptyWriter;
+use ImportCsvBundle\Services\Writer\EmptyWriter;
 use Doctrine\ORM\EntityManager;
 use Port\Csv\CsvReader;
 use Port\Steps\StepAggregator;
@@ -10,7 +10,7 @@ use Port\Steps\Step\MappingStep;
 use Port\Steps\Step\ConverterStep;
 use Port\Steps\Step\FilterStep;
 use Port\Doctrine\DoctrineWriter;
-use ImportCsvBundle\Filters\CostStockFilter;
+use ImportCsvBundle\Services\Filters\CostStockFilter;
 use SplFileInfo;
 
 /**
