@@ -109,7 +109,7 @@ class ParserCsvService
     }
 
     /**
-     * Convert filed  dtmdiscontinued before recording in databasee
+     * Convert filed  discontinued before recording in database
      */
     protected function setConvertStep()
     {

@@ -11,25 +11,31 @@ class CostStockFilterTest extends \PHPUnit_Framework_TestCase
 
         $result = $costStockFilter->checkData(['cost' => 'cost',
                                                'stock' => 'asd23',
-                                               'productCode' => 'TT']);
+                                               'productCode' => 'T1']);
 
         $this->assertEquals($result, false);
 
         $result = $costStockFilter->checkData(['cost' => '2000',
                                                'stock' => '12',
-                                               'productCode' => 'TT']);
+                                               'productCode' => 'T2']);
 
         $this->assertEquals($result, false);
 
         $result = $costStockFilter->checkData(['cost' => '3',
                                                'stock' => '2',
-                                               'productCode' => 'TT']);
+                                               'productCode' => 'T3']);
+
+        $this->assertEquals($result, false);
+
+        $result = $costStockFilter->checkData(['cost' => '3',
+                                               'stock' => '2',
+                                               'productCode' => 'T3']);
 
         $this->assertEquals($result, false);
 
         $result = $costStockFilter->checkData(['cost' => '12',
                                                'stock' => '100',
-                                               'productCode' => 'TT']);
+                                               'productCode' => 'T4']);
 
         $this->assertEquals($result, true);
 

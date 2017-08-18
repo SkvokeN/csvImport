@@ -59,11 +59,18 @@ class CostStockFilter
     private $errorImportMessage;
 
     /**
-     * Seccess Import Message
+     * Success Import Message
      *
      * @var array
      */
     private $successImportMessage;
+
+    /**
+     * Unique prod code
+     *
+     * @var array
+     */
+    private $uniqueProdCode = [];
 
     /**
      * CostStockFilter constructor.
@@ -132,7 +139,12 @@ class CostStockFilter
             $this->errorImportMessage[] = $input[$this->fieldStrProductCode].". Cost is less than ". $this->minCost." and stock is less than ".$this->minStock.".";
             return false;
         }
+        if(in_array($input[$this->fieldStrProductCode], $this->uniqueProdCode)) {
+            $this->errorImportMessage[] = $input[$this->fieldStrProductCode].". Duplicate product code.";
+            return false;
+        }
 
+        $this->uniqueProdCode[] = $input[$this->fieldStrProductCode];
         $this->successImportMessage[] =  $input[$this->fieldStrProductCode].". Import success!";
 
         return true;
