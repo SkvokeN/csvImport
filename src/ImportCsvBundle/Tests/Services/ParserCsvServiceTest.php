@@ -24,7 +24,7 @@ class ParserCsvServiceTest extends KernelTestCase
         self::bootKernel();
         $this->em = static::$kernel->getContainer()->get('doctrine')->getManager();
         $this->tester = new ParserCsvService($this->em);
-        $this->tester->setHelper(new CostStockFilter('strproductcode','cost', 'stock', 5, 1000, 10));
+        $this->tester->setHelper(new CostStockFilter('productCode','cost', 'stock', 5, 1000, 10));
     }
 
     public function testSetFilePath()
@@ -48,7 +48,7 @@ class ParserCsvServiceTest extends KernelTestCase
         $tester = clone $this->tester;
 
         $tester->setFilePath('src/ImportCsvBundle/Tests/Resources/stock.csv');
-        $this->assertEquals($tester->parseCSV('ImportCsvBundle:Tblproductdata', true), true);
+        $this->assertEquals($tester->parseCSV('ImportCsvBundle:Product', true), true);
 
     }
 

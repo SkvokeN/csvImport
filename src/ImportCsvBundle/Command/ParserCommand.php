@@ -15,7 +15,7 @@ class ParserCommand extends ContainerAwareCommand
     {
         $this->setName('app:parser')
              ->setDescription('Import data from csv file to database')
-             ->addArgument('fileName', InputArgument::REQUIRED, 'Enabled test mode.')
+             ->addArgument('fileName', InputArgument::REQUIRED, 'file name')
              ->addArgument('testMode', InputArgument::OPTIONAL, 'Enabled test mode.');
     }
 
@@ -25,11 +25,11 @@ class ParserCommand extends ContainerAwareCommand
 
         $io->title('Import Start');
 
-        $costStockFilter = new CostStockFilter('strproductcode','cost', 'stock', 5, 1000, 10);
+        $costStockFilter = new CostStockFilter('productCode','cost', 'stock', 5, 1000, 10);
         $result = $this->getContainer()->get('app.parser_csv')
               ->setHelper($costStockFilter)
               ->setFilePath($this->getContainer()->getParameter('csv.file.path').$input->getArgument('fileName'))
-              ->parseCSV('ImportCsvBundle:Tblproductdata', $input->getArgument('testMode'));
+              ->parseCSV('ImportCsvBundle:Product', $input->getArgument('testMode'));
 
         $io->section('Information about import');
         $io->note($input->getArgument('testMode')?'Test mode!':'War mode!');

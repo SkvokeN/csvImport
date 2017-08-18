@@ -98,12 +98,12 @@ class ParserCsvService
     protected function setMappingStep()
     {
         $mapping = new MappingStep();
-        $mapping->map('[Product Code]','[strproductcode]');
-        $mapping->map('[Product Name]','[strproductname]');
-        $mapping->map('[Product Description]','[strproductdesc]');
+        $mapping->map('[Product Code]','[productCode]');
+        $mapping->map('[Product Name]','[productName]');
+        $mapping->map('[Product Description]','[productDesc]');
         $mapping->map('[Stock]','[stock]');
         $mapping->map('[Cost in GBP]','[cost]');
-        $mapping->map('[Discontinued]','[dtmdiscontinued]');
+        $mapping->map('[Discontinued]','[discontinued]');
 
         return $mapping;
     }
@@ -117,8 +117,8 @@ class ParserCsvService
         $converterStep->add(
             function ($input) {
                 $dateTime = new \DateTime();
-                $input['dtmdiscontinued'] =
-                    ($input['dtmdiscontinued'] === 'yes') ? $dateTime : null;
+                $input['discontinued'] =
+                    ($input['discontinued'] === 'yes') ? $dateTime : null;
 
                 return $input;
             }
